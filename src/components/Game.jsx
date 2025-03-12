@@ -17,14 +17,14 @@ function Game({ setPantalla }) {
   const [gameOver, setGameOver] = useState(false);
   const [lives, setLives] = useState(3);
 
-  // useEffect(() => {
-  //   if (timeLeft > 0 && lives > 0) {
-  //     const timer = setTimeout(() => setTimeLeft(timeLeft - 1), 1000);
-  //     return () => clearTimeout(timer);
-  //   } else {
-  //     setGameOver(true);
-  //   }
-  // }, [timeLeft]);
+  useEffect(() => {
+    if (timeLeft > 0 && lives > 0) {
+      const timer = setTimeout(() => setTimeLeft(timeLeft - 1), 1000);
+      return () => clearTimeout(timer);
+    } else {
+      setGameOver(true);
+    }
+  }, [timeLeft]);
 
   useEffect(() => {
     if (!gameOver) {
